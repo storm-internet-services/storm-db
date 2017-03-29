@@ -1,0 +1,63 @@
+wispy:
+    adapter: mysqli
+    host: 127.0.0.1
+    username: wispy
+    password: xxxxxxxx
+    database: wispy
+
+netsaint:
+    adapter: mysqli
+    host: 127.0.0.1
+    username: wispy
+    password: xxxxxxxx
+    database: icinga
+
+rt:
+    adapter: mysqli
+    host: 127.0.0.1
+    username: wispy
+    password: xxxxxxxx
+    database: rt4
+
+billing_storm:
+    adapter: mysqli
+    host: 127.0.0.1
+    username: wispy
+    password: xxxxxxxx
+    database: storm
+
+billing_superaje:
+    adapter: mysqli
+    host: 127.0.0.1
+    username: wispy
+    password: xxxxxxxx
+    database: superaje
+
+billing_porchlight:
+    adapter: mysqli
+    host: 127.0.0.1
+    username: wispy
+    password: xxxxxxxx
+    database: porchlight
+
+access_access:
+    adapter: mysqli
+    host: 127.0.0.1
+    username: wispy
+    password: xxxxxxxx
+    database: storm
+
+access_superaje:
+    adapter: mysqli
+    host: 127.0.0.1
+    username: wispy
+    password: xxxxxxxx
+    database: superaje
+
+access_porchlight:
+    adapter: mysqli
+    host: 127.0.0.1
+    username: wispy
+    password: xxxxxxxx
+    database: porchlight
+
