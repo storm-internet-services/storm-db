@@ -22,7 +22,9 @@ class DB
 			return self::$registry[$db_key];
 		} 
 
-		# otherwise, lets connect us to some databases
+		## otherwise, lets connect us to some databases
+		
+		# grab the config file from environment, or try $HOME if env is not available
 		if (isset($_SERVER['STORM_DB_CONFIG'])) {
 			$cfgfile = $_SERVER['STORM_DB_CONFIG'];
 		} else {
@@ -32,11 +34,11 @@ class DB
 		try {
 			$dbcfg = new Vars($cfgfile);
 		} catch (\InvalidArgumentException $e) {
-			die("** FATAL ERROR **  database configuration \"{$cfgfile}\" unreadable or not found!\n");
+			throw new \RuntimeException("Database configuration \"{$cfgfile}\" unreadable or not found!\n");
 		}
 
 		if (! isset($dbcfg[$db_key])) {
-			throw new \InvalidArgumentException("couldn't load config for {$db_key} database");
+			throw new \InvalidArgumentException("Couldn't load config for {$db_key} database");
 		}
 
 		$dbuser = $dbcfg[$db_key]['username'];
@@ -60,7 +62,7 @@ class DB
 		}
 
 		if (! @$dbh->NConnect($dbhost, $dbuser, $dbpass, $dbname)) {
-			throw new \Exception("Cannot connect to database! host: {$dbhost}, user: {$dbuser}, db: {$dbname}");
+			throw new \RuntimeException("Cannot connect to database! host: {$dbhost}, user: {$dbuser}, db: {$dbname}, error: {$dbh->ErrorMsg()}");
 		}
 
 		# set associative fetch mode by default
