@@ -32,7 +32,7 @@ class DB
 		}
 
 		try {
-			$dbcfg = new Vars($cfgfile);
+			$dbcfg = new Vars($cfgfile, array('cache' => false));
 		} catch (\InvalidArgumentException $e) {
 			throw new \RuntimeException("Database configuration \"{$cfgfile}\" unreadable or not found!\n");
 		}
