@@ -11,7 +11,7 @@ class DB
 	# singleton pattern - only allow access through ::connect
 	protected function __construct() { }
 	protected function _clone() { }
- 
+
 	public static function connect($db_server, $db_name=null) {
 
 		# determine registry key for server/name
@@ -20,10 +20,10 @@ class DB
 		# if we're already connected to that db, return the cached db handle from the registry
 		if (array_key_exists($db_key, self::$registry)) {
 			return self::$registry[$db_key];
-		} 
+		}
 
 		## otherwise, lets connect us to some databases
-		
+
 		# grab the config file from environment, or try $HOME if env is not available
 		if (isset($_SERVER['STORM_DB_CONFIG'])) {
 			$cfgfile = $_SERVER['STORM_DB_CONFIG'];
@@ -69,7 +69,7 @@ class DB
 		$dbh->SetFetchMode(ADODB_FETCH_ASSOC);
 
 		# store the database handle for later re-use
-		self::$registry[$db_key] = $dbh; 
+		self::$registry[$db_key] = $dbh;
 
 		return self::$registry[$db_key];
 	}

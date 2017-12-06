@@ -1,24 +1,24 @@
 {
-    "name": "storm-internet-services/storm-db",
-    "type": "library",
-    "description": "Storm Internet - Storm Database Helper Library",
-    "homepage": "https://github.com/storm-internet-services/storm-db",
-    "license": "proprietary",
-    "authors": [
-        {
-            "name": "Paul Haggart",
-            "email": "ph@corp.storm.ca"
-        }
-    ],
-    "require": {
-        "php": ">=5.4.0",
-		"adodb/adodb-php": "5.x",
-        "m1/vars": "^1.1",
-        "symfony/yaml": "~2.8"
-    },
-    "autoload": {
-        "psr-4": {
-            "Storm\\": "Storm/"
-        }
+  "name": "storm-internet-services/storm-db",
+  "type": "library",
+  "description": "Storm Internet - Storm Database Helper Library",
+  "homepage": "https://github.com/storm-internet-services/storm-db",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Paul Haggart",
+      "email": "ph@corp.storm.ca"
     }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "adodb/adodb-php": "5.x",
+    "m1/vars": "^1.1",
+    "symfony/yaml": "~2.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "Storm\\": "Storm/"
+    }
+  }
 }
