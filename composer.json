@@ -13,8 +13,7 @@
   "require": {
     "php": ">=5.4.0",
     "adodb/adodb-php": "5.x",
-    "m1/vars": "^1.1",
-    "symfony/yaml": "~2.8"
+    "m1/vars": "^1.1"
   },
   "autoload": {
     "psr-4": {
